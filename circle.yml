@@ -8,4 +8,4 @@ dependencies:
     - dotnet restore
 test:
   override:
-    - dotnet build
+    - dotnet build ./Source/WordSplitter/
