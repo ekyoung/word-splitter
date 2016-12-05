@@ -34,7 +34,7 @@ namespace EthanYoung.WordSplitter
 
        public static bool GetTrue()
        {
-           return false;
+           return true;
        }
     }
 }
