@@ -9,4 +9,5 @@ dependencies:
     - dotnet --info
 test:
   override:
-    - dotnet test ./test/WordSplitter.Tests/
+    - mkdir -p $CIRCLE_TEST_REPORTS/nunit
+    - dotnet test ./test/WordSplitter.Tests/ --result=$CIRCLE_TEST_REPORTS/nunit/WordSplitter.Tests.xml
