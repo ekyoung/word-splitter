@@ -6,7 +6,7 @@ dependencies:
     - sudo apt-get install dotnet-dev-1.0.0-preview2-003131
   override:
     - dotnet restore
-    - dotnet --info
+    - xsltproc --version
 test:
   override:
     - mkdir -p $CIRCLE_TEST_REPORTS/nunit
