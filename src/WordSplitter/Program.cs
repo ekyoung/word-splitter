@@ -31,5 +31,10 @@ namespace EthanYoung.WordSplitter
                 }
             }
        }
+
+       public static bool GetTrue()
+       {
+           return true;
+       }
     }
 }
