@@ -7,8 +7,8 @@ dependencies:
     - sudo apt-get install xsltproc
   override:
     - dotnet restore
-    - xsltproc --version
 test:
   override:
+    - dotnet test ./test/WordSplitter.Tests/ --result=WordSplitter.Tests.xml
     - mkdir -p $CIRCLE_TEST_REPORTS/nunit
-    - dotnet test ./test/WordSplitter.Tests/ --result=$CIRCLE_TEST_REPORTS/nunit/WordSplitter.Tests.xml
+    - xsltproc -o $CIRCLE_TEST_REPORTS/nunit/WordSplitter.Tests.xml nunit3-junit.xslt ./WordSplitter.Tests.xml
