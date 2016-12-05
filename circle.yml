@@ -6,6 +6,7 @@ dependencies:
     - sudo apt-get install dotnet-dev-1.0.0-preview2.1-003177
   override:
     - dotnet restore
+    - dotnet --info
 test:
   override:
     - dotnet test ./test/WordSplitter.Tests/
