@@ -12,3 +12,22 @@ test:
     - dotnet test ./test/WordSplitter.Tests/ --result=WordSplitter.Tests.xml
     - mkdir -p $CIRCLE_TEST_REPORTS/nunit
     - xsltproc -o $CIRCLE_TEST_REPORTS/nunit/WordSplitter.Tests.xml nunit3-junit.xslt ./WordSplitter.Tests.xml
+  post:
+   - dotnet build -c Release -r centos.7-x64 ./src/WordSplitter/
+   - mkdir ./code-deploy/content
+   - cp -r ./src/WordSplitter/bin/Release/netcoreapp1.0/centos.7-x64/ ./code-deploy/content/
+
+deployment:
+  production:
+    branch: master
+    codedeploy:
+      word-splitter:
+        application_root: /code-deploy
+        revision_location:
+          revision_type: S3
+          s3_location:
+            bucket: ethan-young-code-deploy
+            key_pattern: word-splitter/production/{SHORT_COMMIT}-{BUILD_NUM}
+        region: us-east-1
+        deployment_group: production
+        deployment_config: CodeDeployDefault.OneAtATime
