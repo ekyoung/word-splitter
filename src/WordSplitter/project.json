@@ -24,7 +24,7 @@
     "win10-x64": {},
     //CircleCi is ubuntu
     "ubuntu.14.04-x64": {},
-    //Amazon Linux (production) is closest to CentOS
-    "centos.7-x64": {}
+    //Amazon Linux (production) works with the debian runtime even though I thought it was closer to centos
+    "debian.8-x64": {}
   }
 }
