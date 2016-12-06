@@ -22,6 +22,9 @@
   "runtimes": {
     "osx.10.11-x64": {},
     "win10-x64": {},
+    //CircleCi is ubuntu
+    "ubuntu.14.04-x64": {},
+    //Amazon Linux (production) is closest to CentOS
     "centos.7-x64": {}
   }
 }
