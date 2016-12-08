@@ -28,6 +28,6 @@ deployment:
           s3_location:
             bucket: ethan-young-code-deploy
             key_pattern: word-splitter/production/{SHORT_COMMIT}-{BUILD_NUM}
-        region: us-east-1
+        region: us-west-2
         deployment_group: production
         deployment_config: CodeDeployDefault.OneAtATime
