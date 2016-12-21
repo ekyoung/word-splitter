@@ -26,8 +26,8 @@ deployment:
         revision_location:
           revision_type: S3
           s3_location:
-            bucket: ethan-young-code-deploy-us-west-2
+            bucket: ethan-young-code-deploy
             key_pattern: word-splitter/production/{SHORT_COMMIT}-{BUILD_NUM}
-        region: us-west-2
+        region: us-east-1
         deployment_group: production
         deployment_config: CodeDeployDefault.OneAtATime
